@@ -1,13 +1,23 @@
+import { Button, StyleSheet, Text, View } from "react-native";
 
-import React from 'react';
-import { View, Text } from 'react-native';
-
-const HomePage = () => {
+const HomePage = ({ navigation }) => {
   return (
-    <View>
-      <Text>Welcome to the HomePage!</Text>
+    <View style={styles.homePage}>
+      <Text>HomePage</Text>
+      <Button
+        title="Go to Dashboard"
+        onPress={() => navigation.navigate("Dashboard")}
+      />
     </View>
   );
 };
+
+const styles = StyleSheet.create({
+  homePage: {
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+});
 
 export default HomePage;
